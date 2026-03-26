@@ -1,24 +1,38 @@
+/* Resets e Variáveis CSS */
 :root {
     --bg-dark: #09090A;
     --card-bg: #121214;
+    --border-color: #29292E;
     --primary-purple: #9282FA;
+    --primary-purple-hover: #7b69eb;
     --text-main: #E1E1E6;
+    --text-muted: #7C7C8A;
+    --danger: #F75A68;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Card de Agendamento */
-.schedule-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid #29292E;
+input, select, textarea, button {
+    font-family: inherit;
 }
 
-.schedule-time { font-weight: bold; width: 60px; }
-.schedule-info { flex: 1; }
-.btn-remove { color: #F75A68; cursor: pointer; background: none; border: none; }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}

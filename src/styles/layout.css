@@ -1,0 +1,120 @@
+/* Cabeçalho e Estrutura Principal */
+.header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+}
+
+.logo span {
+    color: var(--primary-purple);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.agenda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.agenda-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.agenda-header p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Inputs de Data (Visual customizado) */
+input[type="date"], select, input[type="text"], input[type="tel"], textarea {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input[type="date"]:focus, select:focus, input[type="text"]:focus, input[type="tel"]:focus, textarea:focus {
+    border-color: var(--primary-purple);
+}
+
+/* Seções de Agendamento (Manhã, Tarde, Noite) */
+.period-section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.period-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.period-title { display: flex; align-items: center; gap: 0.5rem; color: var(--text-main); }
+
+/* Card de Agendamento individual */
+.schedule-item {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.schedule-item:last-child { border-bottom: none; }
+
+.item-time { font-weight: bold; font-size: 1.125rem; width: 60px; }
+.item-info { flex: 1; display: flex; flex-direction: column; gap: 0.25rem; min-width: 200px; }
+.item-info strong { font-size: 1rem; }
+.item-info span { color: var(--text-muted); font-size: 0.875rem; }
+.item-service { flex: 1; color: var(--text-muted); font-size: 0.875rem; min-width: 150px; }
+
+.btn-remove {
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+
+.btn-remove:hover { color: var(--danger); }
+
+/* Botão Flutuante */
+.float-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-purple);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(146, 130, 250, 0.3);
+    transition: background-color 0.2s;
+}
+
+.float-btn:hover { background-color: var(--primary-purple-hover); }
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .schedule-item { flex-direction: column; align-items: flex-start; }
+    .float-btn { bottom: 1rem; right: 1rem; left: 1rem; width: calc(100% - 2rem); text-align: center; }
+}

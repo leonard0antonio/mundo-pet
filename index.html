@@ -4,40 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Pet - Agenda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <link rel="stylesheet" href="src/styles/modal.css">
 </head>
 <body>
-    <header>
-        <img src="assets/logo.svg" alt="Mundo Pet">
+    <header class="header">
+        <div class="logo">
+            <span>🐾 MUNDO PET</span>
+        </div>
     </header>
 
     <main class="container">
         <section class="agenda-header">
-            <h1>Sua agenda</h1>
-            <input type="date" id="date-filter" value="2024-01-10">
+            <div>
+                <h1>Sua agenda</h1>
+                <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+            </div>
+            <div class="date-picker-wrapper">
+                <input type="date" id="date-filter">
+            </div>
         </section>
 
-        <div id="schedule-list"></div>
+        <div id="schedule-list" class="schedule-list"></div>
 
-        <button id="btn-open-modal" class="btn-primary">NOVO AGENDAMENTO</button>
+        <button id="btn-open-modal" class="btn-primary float-btn">NOVO AGENDAMENTO</button>
     </main>
 
     <div id="modal-overlay" class="hidden">
         <div class="modal">
-            <button id="btn-close-modal">&times;</button>
+            <button id="btn-close-modal" class="btn-close" aria-label="Fechar modal">&times;</button>
             <h2>Agende um atendimento</h2>
+            <p class="modal-subtitle">Preencha os dados do cliente para realizar o agendamento:</p>
+            
             <form id="schedule-form">
-                <input type="text" name="tutor" placeholder="Nome do tutor" required>
-                <input type="text" name="pet" placeholder="Nome do pet" required>
-                <input type="tel" name="phone" placeholder="(00) 0 0000-0000" required>
-                <textarea name="service" placeholder="Descrição do serviço" required></textarea>
-                <div class="row">
-                    <input type="date" name="date" required>
-                    <select name="hour" id="hour-select" required></select>
+                <div class="input-group">
+                    <label>Nome do tutor</label>
+                    <input type="text" name="tutor" placeholder="Helena Souza" required>
                 </div>
+
+                <div class="input-group">
+                    <label>Nome do pet</label>
+                    <input type="text" name="pet" placeholder="Cheddar" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Telefone</label>
+                    <input type="tel" name="phone" placeholder="(00) 0 0000-0000" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Descrição do serviço</label>
+                    <textarea name="service" placeholder="Banho e tosa" rows="3" required></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Data</label>
+                        <input type="date" name="date" id="form-date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Hora</label>
+                        <select name="hour" id="hour-select" required>
+                            </select>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn-submit">AGENDAR</button>
             </form>
         </div>
     </div>
+
+    <script src="src/js/schedule.js"></script>
+    <script src="src/js/main.js"></script>
 </body>
 </html>
