@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pet - Agenda</title>
+    <link rel="stylesheet" href="src/styles/global.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo.svg" alt="Mundo Pet">
+    </header>
+
+    <main class="container">
+        <section class="agenda-header">
+            <h1>Sua agenda</h1>
+            <input type="date" id="date-filter" value="2024-01-10">
+        </section>
+
+        <div id="schedule-list"></div>
+
+        <button id="btn-open-modal" class="btn-primary">NOVO AGENDAMENTO</button>
+    </main>
+
+    <div id="modal-overlay" class="hidden">
+        <div class="modal">
+            <button id="btn-close-modal">&times;</button>
+            <h2>Agende um atendimento</h2>
+            <form id="schedule-form">
+                <input type="text" name="tutor" placeholder="Nome do tutor" required>
+                <input type="text" name="pet" placeholder="Nome do pet" required>
+                <input type="tel" name="phone" placeholder="(00) 0 0000-0000" required>
+                <textarea name="service" placeholder="Descrição do serviço" required></textarea>
+                <div class="row">
+                    <input type="date" name="date" required>
+                    <select name="hour" id="hour-select" required></select>
+                </div>
+                <button type="submit" class="btn-submit">AGENDAR</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

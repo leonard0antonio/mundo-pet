@@ -1,0 +1,24 @@
+:root {
+    --bg-dark: #09090A;
+    --card-bg: #121214;
+    --primary-purple: #9282FA;
+    --text-main: #E1E1E6;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Card de Agendamento */
+.schedule-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #29292E;
+}
+
+.schedule-time { font-weight: bold; width: 60px; }
+.schedule-info { flex: 1; }
+.btn-remove { color: #F75A68; cursor: pointer; background: none; border: none; }
