@@ -45,10 +45,15 @@
     width: 100%;
 }
 
-.input-group label {
-    font-size: 0.875rem;
+input[type="date"], select, input[type="text"], input[type="tel"], textarea {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
     color: var(--text-main);
-    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s;
+    width: 100%; /* <-- Adicione esta linha */
 }
 
 .row {
